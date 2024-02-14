@@ -4,9 +4,9 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
 import { HomePageComponent } from './shared/pages/home-page/home-page.component';
 
 export const routes: Routes = [
-    { path: 'about-page/', component: AboutPageComponent },
-    { path: 'contact-page/', component: ContactPageComponent },
-    { path: 'home-page/', component: HomePageComponent },
-    // { path: '', component:  },
+    { path: 'about', component: AboutPageComponent },
+    { path: 'contact', component: ContactPageComponent },
+    { path: 'home', component: HomePageComponent },
+    { path: '', component:  HomePageComponent},
     // { path: '**', component: },
 ];
