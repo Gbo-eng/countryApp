@@ -1,6 +1,5 @@
 <!-- <p>searchBox works!</p> -->
 <div>
-    
-    <input type="text" placeholder="Introduce el término de búsqueda..." class="form-control">
-
+    <input type="text" [placeholder]="placeholder" class="form-control" (input)="onSearchTextChange($event)" (keyup.enter)="onSearchTextChange($event)">
+    <button (click)="onSearch()">Buscar</button>
 </div>

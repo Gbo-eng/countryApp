@@ -9,5 +9,7 @@ import { SearchBoxComponent } from '../../../shared/components/searchBox/searchB
   styles: ``
 })
 export class ByCountryPageComponent {
-
+  handleSearchTextChange(searchText: string) {
+    console.log("Texto de búsqueda:", searchText);
+  }
 }
