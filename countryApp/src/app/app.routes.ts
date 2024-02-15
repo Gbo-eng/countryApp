@@ -7,6 +7,24 @@ export const routes: Routes = [
     { path: 'about', component: AboutPageComponent },
     { path: 'contact', component: ContactPageComponent },
     { path: 'home', component: HomePageComponent },
-    { path: '', component:  HomePageComponent},
+    { path: '', component: HomePageComponent },
     // { path: '**', component: },
+    {
+        path: 'capital',
+        loadChildren: () => import('./countries/country.routes').then((m) => m.countryRoutes),
+    },
+    {
+        path: 'countries',
+        loadChildren: () => import('./countries/country.routes').then((m) => m.countryRoutes),
+    },
+
+    {
+        path: 'by-country-Page',
+        loadChildren: () => import('./countries/country.routes').then((m) => m.countryRoutes),
+    },
+    {
+        path: 'region',
+        loadChildren: () => import('./countries/country.routes').then((m) => m.countryRoutes),
+    },
+
 ];
