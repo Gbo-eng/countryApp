@@ -1,45 +1,29 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { Country } from '../interfaces/country';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class CountryService {
-//   private apiUrl = 'https://restcountries.com/v3/capital/';
-
-//   constructor(private http: HttpClient) { }
-
-//   getCountryByCapital(capital: string): Observable<Country[]> {
-//     return this.http.get<Country[]>(`${this.apiUrl}${capital}`);
-//   }
-// }
+// countries/services/country.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of  } from 'rxjs';
 import { Country } from '../interfaces/country';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CountryService {
-  private apiUrl = 'https://restcountries.com/v3.1/';
+  private apiUrl: string = 'https://restcountries.com/v3.1'; // URL de la API-Rest
 
   constructor(private http: HttpClient) {}
 
-  searchByTerm(term: string): Observable<Country[]> {
-    const endpoint = `name/${term}`;
-    return this.http.get<Country[]>(`${this.apiUrl}${endpoint}`);
+  // Método para obtener información de un país por su nombre
+  getCountryBypais(pais: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${pais}`);
   }
 
-  getByCapital(capital: string): Observable<Country[]> {
-    const endpoint = `capital/${capital}`;
-    return this.http.get<Country[]>(`${this.apiUrl}${endpoint}`);
+  // Método para obtener información de países por su capital
+  getCountriesByCapital(capital: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/capital/${capital}`);
   }
 
-  getByRegion(region: string): Observable<Country[]> {
-    const endpoint = `region/${region}`;
-    return this.http.get<Country[]>(`${this.apiUrl}${endpoint}`);
+  // Método para obtener información de países por su región
+  getCountriesByRegion(region: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/region/${region}`);
   }
 }

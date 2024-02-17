@@ -1,6 +1,15 @@
 export interface Country {
-    name: string;
-    capital: string;
-    population: number;
-    // Agrega otras propiedades según la estructura del objeto devuelto por la API
+  name: {
+    common: string;
+  };
+  capital: string;
+  region: string;
+  flags: {
+    png: string;
+    alt: string;
+  };
+  population: number;
+  coatOfArms: {
+    svg: string
   }
+}

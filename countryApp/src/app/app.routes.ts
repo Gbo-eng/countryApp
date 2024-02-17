@@ -25,5 +25,6 @@ export const routes: Routes = [
     {
         path: 'region',
         loadChildren: () => import('./countries/country.routes').then((m) => m.countryRoutes),
-    }
+    },
+
 ];
