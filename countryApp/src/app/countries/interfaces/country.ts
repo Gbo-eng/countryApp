@@ -11,5 +11,7 @@ export interface Country {
   population: number;
   coatOfArms: {
     svg: string
-  }
+  };
+  ccn3: string;
 }
+

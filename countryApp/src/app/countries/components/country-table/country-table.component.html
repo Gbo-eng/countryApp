@@ -24,7 +24,10 @@
                 <td>{{ dato.name.common }}</td>
                 <td>{{ dato.capital }}</td>
                 <td>{{ dato.population | number }}</td>
-                <td><a href="https://es.wikipedia.org/wiki/{{ dato.capital }}" target="_blank">Ver más...</a></td>
+                <!-- <td><a [routerLink]="['/country/alpha/', dato.ccn3]">Ver más...</a></td> -->
+                <td><a [routerLink]="['/countries/country/', dato.ccn3]" routerLinkActive="active">Ver más...</a></td>
+                <!-- <td><button (click)="verMas(dato.ccn3)">Ver más...</button></td> -->
+                <!-- <td><a href="https://es.wikipedia.org/wiki/{{ dato.capital }}" target="_blank">Ver más...</a></td> -->
             </tr>
         </tbody>
     </table>

@@ -22,8 +22,18 @@ export class ByCapitalPageComponent {
     this.getCountriesByCapital(searchText);
   }
 
-  getCountriesByCapital(capital: string): void {
-    this.countryService.getCountriesByCapital(capital)
-  .subscribe(newCountries => this.countries = [...this.countries, ...newCountries]);
+  // getCountriesByCapital(capital: string): void {
+  //   this.countryService.getCountriesByCapital(capital)
+  // .subscribe(newCountries => this.countries = [...this.countries, ...newCountries]);
+  // }
+  getCountriesByCapital(capital: string) {
+    this.countryService.getCountriesByCapital(capital).subscribe(
+      (data) => {
+        this.countries = data;
+      },
+      (error) => {
+        console.error('Error al obtener los datos de la capital:', error);
+      }
+    );
   }
 }
