@@ -1,2 +1,8 @@
 <p>by-country-page works!</p>
-<app-searchBox [placeholder]="'País'" (searchTextChange)="handleSearchTextChange($event)"></app-searchBox>
+<div>
+  <h1>By Country Page</h1>
+  <app-searchBox (searchTextChange)="handleSearchTextChange($event)" [placeholder]="'País'"></app-searchBox>
+</div>
+<div>
+  <app-country-table [countries]="countries"></app-country-table>
+</div>

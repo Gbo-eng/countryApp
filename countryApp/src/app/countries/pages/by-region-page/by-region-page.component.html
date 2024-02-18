@@ -1,2 +1,9 @@
 <p>by-region-page works!</p>
-<app-searchBox [placeholder]="'region'" (searchTextChange)="handleSearchTextChange($event)"></app-searchBox>
+<div>
+    <h1>By Región Page</h1>
+    <!-- <app-searchBox [placeholder]="'region'" (searchTextChange)="handleSearchTextChange($event)"></app-searchBox> -->
+  <app-searchBox (searchTextChange)="handleSearchTextChange($event)" [placeholder]="'Región'"></app-searchBox>
+</div>
+<div>
+  <app-country-table [countries]="countries"></app-country-table>
+</div>

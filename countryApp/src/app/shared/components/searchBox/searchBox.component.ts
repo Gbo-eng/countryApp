@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-// import { RouterModule,RouterLink,RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-searchBox',
@@ -19,8 +18,6 @@ export class SearchBoxComponent {
   }
 
   onSearch() {
-    // Emitir el evento searchTextChange con el valor actual de la caja de búsqueda
-    // Esto enviará el texto ingresado al componente padre cuando se hace clic en el botón
     this.searchTextChange.emit(this.searchText);
   }
 }

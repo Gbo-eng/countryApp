@@ -4,6 +4,7 @@ import { CountryTableComponent } from '../../components/country-table/country-ta
 import { ActivatedRoute } from '@angular/router';
 import { CountryService } from '../../services/country.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-country-page',
   standalone: true,
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     color: black;
   }`
 })
+
 export class CountryPageComponent {
   handleSearchTextChange(searchText: string) {
     console.log("Texto de búsqueda:", searchText);
@@ -38,5 +40,4 @@ export class CountryPageComponent {
       }
     );
   }
-
 }

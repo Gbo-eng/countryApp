@@ -15,8 +15,4 @@ import { Router, RouterModule } from '@angular/router';
 export class CountryTableComponent {
   @Input() countries: Country[] = [];
   constructor(private router: Router) {}
-  
-  verMas(countryCode: string): void {
-    this.router.navigate(['/alpha', countryCode]);
-  }
 }

@@ -14,4 +14,3 @@ export interface Country {
   };
   ccn3: string;
 }
-

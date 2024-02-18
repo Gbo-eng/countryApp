@@ -18,7 +18,6 @@ export class CountryService {
     return this.http.get<Country[]>(`${this.apiUrl}/name/${pais}`)
     .pipe(
       catchError(error => {
-        // console.error('Error al buscar país:', error);
         alert('Error al buscar país. Por favor, inténtalo de nuevo.'); // Muestra el alert
         return of([]); // Vacía el array de resultados
       })
@@ -30,25 +29,18 @@ export class CountryService {
     return this.http.get<Country[]>(`${this.apiUrl}/capital/${capital}`)
     .pipe(
       catchError(error => {
-        // console.error('Error al buscar país:', error);
-        alert('Error al buscar país. Por favor, inténtalo de nuevo.'); // Muestra el alert
+        alert('Error al buscar capital. Por favor, inténtalo de nuevo.'); // Muestra el alert
         return of([]); // Vacía el array de resultados
       })
     );
   }
-
-  // getByCapital(capital: string): Observable<Country[]> {
-  //   const endpoint = capital/${capital};
-  //   return this.http.get<Country[]>(${this.apiUrl}${endpoint})
-  // }
 
   // Método para obtener información de países por su región
   getCountriesByRegion(region: string): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.apiUrl}/region/${region}`)
     .pipe(
       catchError(error => {
-        // console.error('Error al buscar país:', error);
-        alert('Error al buscar país. Por favor, inténtalo de nuevo.'); // Muestra el alert
+        alert('Error al buscar región. Por favor, inténtalo de nuevo.'); // Muestra el alert
         return of([]); // Vacía el array de resultados
       })
     );
@@ -57,12 +49,9 @@ export class CountryService {
     return this.http.get<Country[]>(`${this.apiUrl}/alpha/${code}`)
     .pipe(
       catchError(error => {
-        // console.error('Error al buscar país:', error);
         alert('Error al buscar país. Por favor, inténtalo de nuevo.'); // Muestra el alert
         return of([]); // Vacía el array de resultados
       })
     );
   }
-  
 }
-
